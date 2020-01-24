@@ -101,19 +101,12 @@ const TaskList = props => {
       </Container>
       <S.divider />
       <Container>
-        <S.h1>Task List</S.h1>
+        <S.h1>Tasks List</S.h1>
         <MaterialTable 
-          title="Tasks List"
+          title=""
           columns={columns}
           data={tasks}
           editable={{
-            onRowAdd: task => 
-              new Promise(resolve => {
-                setTimeout(() => {
-                  resolve();
-                  setTasks([...tasks, task])
-                }, 600);
-              }),
             onRowUpdate: (newTask, oldTask) =>
               new Promise(resolve => {
                 setTimeout(() => {
